@@ -27,7 +27,7 @@ phases:
       - docker run --rm
         -v $(pwd):/apps -u $(id -u):$(id -g)
         -w /apps/aws 
-        indeni/cloudrail-cli
+        public.ecr.aws/indeni/cloudrail-cli-develop
         run -p tf.plan -d . --auto-approve -v --api-key $CLOUDRAIL_API_KEY
       - docker run --rm 
         -v $(pwd):/apps -u $(id -u):$(id -g)
