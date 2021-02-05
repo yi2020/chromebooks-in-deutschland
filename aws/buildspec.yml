@@ -16,7 +16,6 @@ phases:
       - yarn --prod --frozen-lockfile
       - yarn prep
       - docker run --rm
-        # From https://docs.aws.amazon.com/codebuild/latest/userguide/troubleshooting.html#troubleshooting-versions
         -e AWS_DEFAULT_REGION -e AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         amazon/aws-cli sts get-caller-identity
       - docker run --rm 
