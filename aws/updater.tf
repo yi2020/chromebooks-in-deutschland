@@ -1,9 +1,4 @@
 terraform {
-  backend "s3" {
-    bucket = "9826119742-state"
-    key    = "chromebooks-in-deutschland.tfstate"
-    region = "eu-central-1"
-  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"

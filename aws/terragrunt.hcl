@@ -1,9 +1,8 @@
 locals {
-  secrets = yamldecode(sops_decrypt_file(("secrets.enc.yaml")))
 }
 
 inputs = {
-  cid_api_key = local.secrets.cid_api_key
+  cid_api_key = "asdfasdfasdfasdf" 
 }
 
 terraform {
