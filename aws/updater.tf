@@ -15,7 +15,7 @@ provider "aws" {
 variable "cid_api_key" {
   description = "CID API key"
   type        = string
-  sensitive   = true
+  // sensitive   = true
 }
 
 # from https://gist.github.com/smithclay/e026b10980214cbe95600b82f67b4958
