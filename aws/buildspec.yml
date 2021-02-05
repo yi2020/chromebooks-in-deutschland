@@ -24,6 +24,11 @@ phases:
         -e AWS_DEFAULT_REGION -e AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
         alpine/terragrunt
         terragrunt plan -out tf.plan
+      - docker run --rm
+        -v $(pwd):/apps -u $(id -u):$(id -g)
+        -w /apps/aws 
+        indeni/cloudrail-cli
+        run -p tf.plan -d . --auto-approve -v --api-key $CLOUDRAIL_API_KEY
       - docker run --rm 
         -v $(pwd):/apps -u $(id -u):$(id -g)
         -w /apps/aws 
