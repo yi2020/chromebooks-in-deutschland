@@ -11,6 +11,7 @@ phases:
       - docker info
   build:
     commands:
+      - docker login -u $dockerhub_username -p $dockerhub_password
       - ls -lR
       - git status --verbose
       - yarn --prod --frozen-lockfile
