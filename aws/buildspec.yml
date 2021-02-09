@@ -30,6 +30,9 @@ phases:
         -w /apps/aws 
         indeni/cloudrail-cli
         run -p tf.plan -d . --auto-approve -v --api-key $CLOUDRAIL_API_KEY
+        --origin ci --build-link "https://console.aws.amazon.com/codesuite/codebuild/"
+        --execution-source-identifier "${CODEBUILD_BUILD_ID}"  
+        --output-format junit --output-file /data/cloudrail.result.xml 
       - docker run --rm 
         -v $(pwd):/apps -u $(id -u):$(id -g)
         -w /apps/aws 
